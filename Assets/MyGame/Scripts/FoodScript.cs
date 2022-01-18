@@ -8,11 +8,18 @@ public class FoodScript : MonoBehaviour
     [SerializeField] float secondSpawn = 0.5f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
+    public int score;
+    public float time = 60;
 
     
     void Start()
     {
         StartCoroutine(FoodSpawn());
+    }
+
+    void Update()
+    {
+        time -= Time.deltaTime;
     }
 
   IEnumerator FoodSpawn()
